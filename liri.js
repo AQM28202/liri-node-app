@@ -19,7 +19,43 @@ var cli = () => {
 
     var executeFlow = () => {
 
-//         
+        var concertThis = () => {
+            var artist = parameter;        
+            var urlArtist = artist.split(' ').join('%20');  
+            urlArtist.replace('"', '');
+            queryURL = "https://rest.bandsintown.com/artists/" + urlArtist + "/events?app_id=codingbootcamp";     
+            axios.get(queryURL).then(
+                response => {
+                    for (var i = 0; i < response.data.length; i++) {        
+                        var date = moment(response.data[i].datetime) 
+                        console.log( 
+
+                            `--------------------------------------------------------------
+Concert venue name: ${response.data[i].venue.name}
+Location:           ${response.data[i].venue.city}, ${response.data[i].venue.country} 
+Event date:         ${date.format("MMMM DD YYYY")}
+--------------------------------------------------------------
+`
+                        )
+                    }
+                },
+
+                error => {
+                    if (error.response) {
+
+                        console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);                                
+
+                        console.log(error.request);
+                    } else {
+
+                        console.log("Error", error.message);
+                    }
+                    console.log(error.config);
+                }
+            )
+        }
 
         var spotifyThisSong = () => {
             var songTitle;

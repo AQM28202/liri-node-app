@@ -16,3 +16,12 @@ do-what-it-says, test
 spotify-this-song, Billy Jean
 movie-this, Loving
 concert-this, Chris Brown
+spotify-this-song, Thriller
+do-what-it-says, test
+concert-this, Chris Brown
+concert-this, Chris Brown
+movie-this, Gladys
+concert-this, Chris Brown
+concert-this, Chris Brown
+spotify-this-song, Freeway
+concert-this, Neverland
