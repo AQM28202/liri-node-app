@@ -25,3 +25,5 @@ concert-this, Chris Brown
 concert-this, Chris Brown
 spotify-this-song, Freeway
 concert-this, Neverland
+concert-this, Chris Brown
+spotify-this-song, Thriller

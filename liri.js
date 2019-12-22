@@ -8,7 +8,6 @@ var cli = () => {
     var moment = require("moment");
     var fs = require("fs");
     var spotify = new Spotify(keys.spotify);
-    var bandsInTown = keys.bandsInTown.id;       
     var omdb = keys.omdb.id;
     var inquirer = require("inquirer");
 
@@ -20,10 +19,10 @@ var cli = () => {
     var executeFlow = () => {
 
         var concertThis = () => {
-            var artist = parameter;        
-            var urlArtist = artist.split(' ').join('%20');  
-            urlArtist.replace('"', '');
-            queryURL = "https://rest.bandsintown.com/artists/" + urlArtist + "/events?app_id=codingbootcamp";     
+            var artist = "";        
+            // var urlArtist = artist.split(' ').join('%20');  
+            // urlArtist.replace('"', '');
+            queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";     
             axios.get(queryURL).then(
                 response => {
                     for (var i = 0; i < response.data.length; i++) {        
@@ -164,7 +163,7 @@ Actors:                 ${movie.Actors}
         switch (command) {
             case "concert-this":
                 concertThis()               
-                pushLog()                   //each have a function that fires off to push the command to the logs if the commandLogged boolean is false
+                pushLog()                  
                 break;
 
             case "spotify-this-song":
