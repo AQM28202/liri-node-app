@@ -16,13 +16,15 @@ var cli = () => {
     var executeFlow = () => {
 
         var concertThis = () => {
-            var artist = "";        
-            queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";     
+            var artist = parameter;        
+            var urlArtist = artist.split(' ').join('%20');  
+            urlArtist.replace('"', '');
+            queryURL = `https://rest.bandsintown.com/artists/${urlArtist}/events?app_id=codingbootcamp`       
             axios.get(queryURL).then(
                 response => {
                     for (var i = 0; i < response.data.length; i++) {        
-                        var date = moment(response.data[i].datetime) 
-                        console.log( 
+                        var date = moment(response.data[i].datetime)  
+                        console.log (
 
                             `--------------------------------------------------------------
 Concert venue name: ${response.data[i].venue.name}
