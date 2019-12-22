@@ -8,7 +8,6 @@ var cli = () => {
     var moment = require("moment");
     var fs = require("fs");
     var spotify = new Spotify(keys.spotify);
-    var omdb = keys.omdb.id;
     var inquirer = require("inquirer");
 
     var command = process.argv[2];
