@@ -27,3 +27,5 @@ spotify-this-song, Freeway
 concert-this, Neverland
 concert-this, Chris Brown
 spotify-this-song, Thriller
+concert-this, Katie Perry
+concert-this, Chris Brown

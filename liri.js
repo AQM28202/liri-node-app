@@ -139,46 +139,24 @@ Actors:                 ${movie.Actors}
             })
         }
 
-        var pushLog = () => {
-            if (commandLogged === false) {
-                commandLogged = true;
-                var commands = [];
-                commands.push(command);                 
-                if (parameter) {
-                    commands.push(parameter + '\r\n');
-                } else commands[0] = (`${command},\r\n`);
-                var logTextInput = commands.join(", ");
-                fs.appendFile("log.txt", logTextInput, err => {
-                    if (err) {
-                        return console.log(err);
-                    }
-                })
-            } else {
-                return;
-            }
-
-        }
+        
 
 
         switch (command) {
             case "concert-this":
                 concertThis()               
-                pushLog()                  
                 break;
 
             case "spotify-this-song":
                 spotifyThisSong()
-                pushLog()
                 break;
 
             case "movie-this":
                 movieThis()
-                pushLog()
                 break;
 
             case "do-what-it-says":
                 doWhatItSays()
-                pushLog()
                 break;
 
         }
