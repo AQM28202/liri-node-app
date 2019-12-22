@@ -103,7 +103,8 @@ Link to a preview of song:  ${preview}
                 movie = parameter.split(" ").join("+");
             } else movie = "mr+nobody";
 
-            queryURL = `http://www.omdbapi.com/?t=${movie}&y=&plot=short&apikey=${omdb}`
+            queryURL = `http://www.omdbapi.com/?apiKey=trilogy&t=" + ${movie}`
+            
             axios.get(queryURL).then(
                 response => {
                     var movie = response.data;
