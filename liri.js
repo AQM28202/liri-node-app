@@ -9,18 +9,14 @@ var cli = () => {
     var fs = require("fs");
     var spotify = new Spotify(keys.spotify);
     var inquirer = require("inquirer");
-
     var command = process.argv[2];
     var parameter = process.argv.slice(3).join(" ") || null;                            
-    var commandLogged = false;                    
 
 
     var executeFlow = () => {
 
         var concertThis = () => {
             var artist = "";        
-            // var urlArtist = artist.split(' ').join('%20');  
-            // urlArtist.replace('"', '');
             queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";     
             axios.get(queryURL).then(
                 response => {
